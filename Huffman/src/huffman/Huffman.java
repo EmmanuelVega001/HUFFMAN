@@ -16,6 +16,9 @@ public class Huffman {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Codificador demo=new Codificador();
+        String buscar="011";
+        demo.decodificar(buscar);
     }
     
 }
