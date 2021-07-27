@@ -17,7 +17,7 @@ public class Huffman {
     public static void main(String[] args) {
         // TODO code application logic here
         Codificador demo=new Codificador();
-        String buscar="011";
+        String buscar="11111010110001110110010001000";//probando que todos los nodos esten bien por eso el numerote
         demo.decodificar(buscar);
     }
     
