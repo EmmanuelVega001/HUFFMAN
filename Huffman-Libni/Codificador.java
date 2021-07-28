@@ -85,7 +85,7 @@ class Codificador {
                 }
                 System.out.println("vuelta numero: "+contador+ " numero que hay en el nodo: "+ numerito);//desbuggeador
                 contador++;//aumento el contador en uno para que pueda avanzar en el array de los caracteres
-                if (numerito!=0 ){//si el numero obtenido del nodo es diferente a cero significa que hay una letra
+                if (numerito!=0 || copia==null){//si el numero obtenido del nodo es diferente a cero significa que hay una letra
                     bandera=false;//rompo el ciclo y obtengo la posicion en la que se quedo
                     numeroAuxiliar=contador;
                 }
