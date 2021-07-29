@@ -10,6 +10,10 @@ package huffman;
  * @author asael
  */
 public class Codificador {
+    char [] letras = {'C', 'I', 'O', 'E', 'P', 'R', 'B', 'U', 'A'};
+    String [] camino = {"111", "110", "101", "100", "0111", "0110", "010", "001", "000"};
+
+    
     Nodo padre=new Nodo(0);
     Nodo nodo1=new Nodo(0);
     Nodo nodo2=new Nodo(0);
@@ -73,7 +77,7 @@ public class Codificador {
         int contador=0;
         int value;
         int numeroAuxiliar=0;
-        System.out.println(arrayNumero[contador]+" aaaa la ptm jalaaa");//pa desbuggear el proyecto 
+       // System.out.println(arrayNumero[contador]+" aaaa la ptm jalaaa");//pa desbuggear el proyecto 
         
         
         while(verificar){//creo un while para que recorra todo el array de caracteres
@@ -94,7 +98,7 @@ public class Codificador {
                 }
                 System.out.println("vuelta numero: "+contador+ " numero que hay en el nodo: "+ numerito);//desbuggeador
                 contador++;//aumento el contador en uno para que pueda avanzar en el array de los caracteres
-                if (numerito!=0 ){//si el numero obtenido del nodo es diferente a cero significa que hay una letra
+                if (numerito!=0 || copia==null){//si el numero obtenido del nodo es diferente a cero significa que hay una letra
                     bandera=false;//rompo el ciclo y obtengo la posicion en la que se quedo
                     numeroAuxiliar=contador;
                 }
@@ -107,4 +111,14 @@ public class Codificador {
             }
         }
     }
+    
+    public void buscarCamino(char mensaje){
+        for (int i = 0; i < letras.length; i++){
+            if (letras[i] == mensaje){
+                System.out.println(camino[i] + " ");
+            }
+        }
+        
+    } 
+    
 }
