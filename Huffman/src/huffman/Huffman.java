@@ -27,6 +27,7 @@ public class Huffman {
         System.out.println("Palabra ingresada: " + mensaje);
         System.out.print("Codificacion de la palabra " + mensaje + " es: ");
         for (int i = 0; i < mensajeChar.length; i++){
+            
             demo.buscarCamino(mensajeChar[i]);
         }
 

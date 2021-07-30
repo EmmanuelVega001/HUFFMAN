@@ -5,6 +5,8 @@
  */
 package huffman;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author asael
@@ -12,7 +14,7 @@ package huffman;
 public class Codificador {
     char [] letras = {'C', 'I', 'O', 'E', 'P', 'R', 'B', 'U', 'A'};
     String [] camino = {"111", "110", "101", "100", "0111", "0110", "010", "001", "000"};
-
+    LinkedList <String> prueba=new LinkedList();
     
     Nodo padre=new Nodo(0);
     Nodo nodo1=new Nodo(0);
@@ -61,7 +63,19 @@ public class Codificador {
         
     }
     
-    
+    public boolean comprobarArray(char [] array){
+        boolean existe=false;
+        try{
+             for(int i=0;i<array.length;i++){
+            int valor=array[i]-'0';
+            
+        }
+        }catch(Exception e){
+            return existe;
+        }
+       
+        return existe;
+    }
     
     public void decodificar(String valor){
         Nodo copia=padre;//creo una copia del nodo padre para poder trabajar a base de este y no alterar el padre
@@ -74,17 +88,17 @@ public class Codificador {
         boolean  bandera=true;;//creo unas banderas que me ayudara
         boolean verificar=true;
         //creo 3 enteros, contador para la posicion del array, value para el valor del numero de la letra, y el numero auxiliar que me ayudara adelante
-        int contador=0;
+        int contador=0; 
         int value;
         int numeroAuxiliar=0;
        // System.out.println(arrayNumero[contador]+" aaaa la ptm jalaaa");//pa desbuggear el proyecto 
         
-        
-        while(verificar){//creo un while para que recorra todo el array de caracteres
+        if (comprobarArray(arrayNumero)==true){
+            while(verificar){//creo un while para que recorra todo el array de caracteres
             copia=padre;//al dar una segunda vuelta requiero trabajar otra vez con una copia, por eso esta aqui la igualacion de la copia al padre
             //aqui es donde se hace el descodificador
             while(bandera){//bandera para verificar que si lo encontro o no
-                //para el lado izquierdo
+                //para el lado izquierdo1
                 value =arrayNumero[contador]-'0';//transformo a int el valor del array en la posicion contador
                 if (value==1){//lo comparo, si es uno es para la izquierda
                     copia=copia.getNodoIzquierdo();//avanzo a la izquierda
@@ -110,6 +124,10 @@ public class Codificador {
                 break;//si es asi entonces rompo el while principal
             }
         }
+        }else{
+            System.out.println("Error");
+        }
+        
     }
     
     public void buscarCamino(char mensaje){
@@ -118,7 +136,27 @@ public class Codificador {
                 System.out.println(camino[i] + " ");
             }
         }
-        
+        Nodo copia=padre;
+        inOrder(copia);
+       // System.out.print("Otra madre: \n"+prueba);
     } 
+    
+    public void inOrder(Nodo raiz){
+        
+        if(raiz!=null){
+            System.out.print("1");
+           
+            inOrder(raiz.getNodoIzquierdo());  
+             System.out.print(raiz.getDato()+" ");
+           if (raiz.getDato()!=0){
+               prueba.add(raiz.getDato()+"");
+            } 
+           System.out.print("0");
+            inOrder(raiz.getNodoDerecho());
+            
+            
+        }
+        
+    }
     
 }
