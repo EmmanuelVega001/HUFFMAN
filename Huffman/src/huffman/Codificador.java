@@ -125,7 +125,7 @@ public class Codificador {
             }
         }
         }else{
-            System.out.println("Error");
+            System.out.println(" Error");
         }
         
     }
@@ -133,7 +133,7 @@ public class Codificador {
     public void buscarCamino(char mensaje){
         for (int i = 0; i < letras.length; i++){
             if (letras[i] == mensaje){
-                System.out.println(camino[i] + " ");
+                System.out.println(camino[i] + ", ");
             }
         }
         Nodo copia=padre;
