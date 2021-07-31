@@ -68,7 +68,7 @@ public class Codificador {
         try{
              for(int i=0;i<array.length;i++){
                 int valor=array[i]-'0';
-                if(valor !=1 || valor !=0){
+                if(valor>1 || valor <0){
                     return false;
                 }
             }
