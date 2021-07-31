@@ -67,14 +67,17 @@ public class Codificador {
         boolean existe=false;
         try{
              for(int i=0;i<array.length;i++){
-            int valor=array[i]-'0';
-            
-        }
+                int valor=array[i]-'0';
+                if(valor !=1 || valor !=0){
+                    return false;
+                }
+            }
+            return true;
         }catch(Exception e){
             return existe;
         }
        
-        return existe;
+       
     }
     
     public void decodificar(String valor){
