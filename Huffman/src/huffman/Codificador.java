@@ -68,7 +68,7 @@ public class Codificador {
         try{
              for(int i=0;i<array.length;i++){
                 int valor=array[i]-'0';
-                if(valor !=1 || valor !=0){
+                if(valor>1 || valor <0){
                     return false;
                 }
             }
@@ -113,22 +113,29 @@ public class Codificador {
                 }else{
                     //numero incorrecto agragar JOption
                 }
-                System.out.println("vuelta numero: "+contador+ " numero que hay en el nodo: "+ numerito);//desbuggeador
-                contador++;//aumento el contador en uno para que pueda avanzar en el array de los caracteres
+                 contador++;//aumento el contador en uno para que pueda avanzar en el array de los caracteres
                 if (numerito!=0 || copia==null){//si el numero obtenido del nodo es diferente a cero significa que hay una letra
                     bandera=false;//rompo el ciclo y obtengo la posicion en la que se quedo
+                    System.out.println("numero encontrado en la vuelta: "+contador+ " con el valor: "+ numerito);//desbuggeado
                     numeroAuxiliar=contador;
+                }
+                if(contador>=size){//verifico si el contador es mayor o igual al tamaño del array
+                    System.out.println("Numero no encontrado");
+                    bandera=false;    
+                    break;//si es asi entonces rompo el while principal
                 }
                 
             }
-            contador=numeroAuxiliar;//el contador lo igualo a la posicion auxiliar
-            bandera=true;//vuelvo a iniciar la bandera en true para que se repita el while anterior
+            
             if(contador>=size){//verifico si el contador es mayor o igual al tamaño del array
                 break;//si es asi entonces rompo el while principal
+            }else{
+                contador=numeroAuxiliar;//el contador lo igualo a la posicion auxiliar
+                bandera=true;//vuelvo a iniciar la bandera en true para que se repita el while anterior
             }
         }
         }else{
-            System.out.println(" Error");
+            System.out.println("Error");
         }
         
     }
@@ -136,7 +143,7 @@ public class Codificador {
     public void buscarCamino(char mensaje){
         for (int i = 0; i < letras.length; i++){
             if (letras[i] == mensaje){
-                System.out.println(camino[i] + ", ");
+                System.out.println(camino[i] + " ");
             }
         }
         Nodo copia=padre;
@@ -147,14 +154,14 @@ public class Codificador {
     public void inOrder(Nodo raiz){
         
         if(raiz!=null){
-            System.out.print("1");
+           // System.out.print("1");
            
             inOrder(raiz.getNodoIzquierdo());  
-             System.out.print(raiz.getDato()+" ");
+        //     System.out.print(raiz.getDato()+" ");
            if (raiz.getDato()!=0){
                prueba.add(raiz.getDato()+"");
             } 
-           System.out.print("0");
+       //    System.out.print("0");
             inOrder(raiz.getNodoDerecho());
             
             

@@ -38,7 +38,7 @@ public class Huffman {
                     }
 
                     String buscar = "11111010110001110110010001000";//probando que todos los nodos esten bien por eso el numerote
-                    demo.decodificar(buscar);
+                    //demo.decodificar(buscar);
                 break;
                 case 2:
                     JOptionPane.showMessageDialog(null, "Aun no IMplementado");
