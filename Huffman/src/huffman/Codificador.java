@@ -134,7 +134,7 @@ public class Codificador {
                 }
             }
         } else {
-            System.out.println("Error");
+            JOptionPane.showMessageDialog(null, "No encontrado");
         }
 
     }
