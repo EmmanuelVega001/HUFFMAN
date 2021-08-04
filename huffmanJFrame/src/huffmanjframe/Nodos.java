@@ -3,35 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package huffman;
+package huffmanjframe;
 
 /**
  *
  * @author asael
  */
-public class Nodo {
-   private int dato;
-   private Nodo izq;
-   private Nodo der;
+public class Nodos {
+    private int dato;
+   private Nodos izq;
+   private Nodos der;
   //metodo constructor
-   public Nodo(int dato){
+   public Nodos(int dato){
        this.dato=dato;
    }
    //gets para regresar el valor de los nodos derecho e izquierdo
-   public Nodo getNodoIzquierdo(){
+   public Nodos getNodoIzquierdo(){
        return izq;
    }
    
-   public Nodo getNodoDerecho(){
+   public Nodos getNodoDerecho(){
        return der;
    }
    
    //sets para darles el valor al nodo izquierdo o derecho
-   public void setNodoIzquierdo(Nodo izquierdo){
+   public void setNodoIzquierdo(Nodos izquierdo){
        this.izq=izquierdo;
    }
    
-   public void setNodoDerecho(Nodo derecho){
+   public void setNodoDerecho(Nodos derecho){
        this.der=derecho;
    }
    
