@@ -132,14 +132,7 @@ public class Ventana extends javax.swing.JFrame {
     private void codificadorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codificadorButtonActionPerformed
         try{
             String mensaje = JOptionPane.showInputDialog(null, "Caracteres admitidos \nA\nE\nI\nO\nC\nR\nB\nP\nU");
-            mensaje = mensaje.toUpperCase();
-            char[] mensajeChar = mensaje.toCharArray();
-            System.out.println("Palabra ingresada: " + mensaje);
-            System.out.print("Codificacion de la palabra " + mensaje + " es: ");
-            for (int i = 0; i < mensajeChar.length; i++) {
-
-                demo.buscarCamino(mensajeChar[i]);
-            }
+            demo.buscarCamino(mensaje);
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"No encontrado");
         }

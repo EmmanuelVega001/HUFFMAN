@@ -15,9 +15,10 @@ import javax.swing.JOptionPane;
 public class Codificador {
 
     char[] letras = {'C', 'I', 'O', 'E', 'P', 'R', 'B', 'U', 'A'};
+    int []valores={7,8,9,10,4,6,10,11,12};
     String[] camino = {"111", "110", "101", "100", "0111", "0110", "010", "001", "000"};
     LinkedList<String> prueba = new LinkedList();
-
+    
     Nodo padre = new Nodo(0);
     Nodo nodo1 = new Nodo(0);
     Nodo nodo2 = new Nodo(0);
@@ -94,7 +95,7 @@ public class Codificador {
         int value;
         int numeroAuxiliar = 0;
         // System.out.println(arrayNumero[contador]+" aaaa la ptm jalaaa");//pa desbuggear el proyecto 
-
+        String mensaje="";
         if (comprobarArray(arrayNumero) == true) {
             while (verificar) {//creo un while para que recorra todo el array de caracteres
                 copia = padre;//al dar una segunda vuelta requiero trabajar otra vez con una copia, por eso esta aqui la igualacion de la copia al padre
@@ -117,6 +118,14 @@ public class Codificador {
                         bandera = false;//rompo el ciclo y obtengo la posicion en la que se quedo
                         System.out.println("numero encontrado en la vuelta: " + contador + " con el valor: " + numerito);//desbuggeado
                         numeroAuxiliar = contador;
+                        int posicion=0;
+                        for (int i=0;i<valores.length;i++){
+                            if(numerito==valores[i]){
+                                posicion=i;
+                                break;
+                            }
+                        }
+                        mensaje+=letras[posicion];
                     }
                     if (contador >= size) {//verifico si el contador es mayor o igual al tamaño del array
                         System.out.println("Numero no encontrado");
@@ -133,28 +142,39 @@ public class Codificador {
                     bandera = true;//vuelvo a iniciar la bandera en true para que se repita el while anterior
                 }
             }
+            JOptionPane.showMessageDialog(null, "Tu decodificacion es : "+mensaje);
         } else {
             JOptionPane.showMessageDialog(null, "No encontrado");
         }
 
     }
 
-    public void buscarCamino(char mensaje) {
+    public void buscarCamino(String mensaje) {
         boolean encontrado=false;
-        int i ;
-        for (i=0; i < letras.length; i++) {
-
-            if (letras[i] == mensaje) {
-                JOptionPane.showMessageDialog(null,"Letra : "+letras[i]+"\n"+"Camino : "+camino[i] );
-                
-                encontrado = true;
-
+        String mensajito="";
+        
+        mensaje = mensaje.toUpperCase();
+        char[] mensajeChar = mensaje.toCharArray();
+        char letra;
+        for (int i = 0; i < mensajeChar.length; i++) {
+            letra=mensajeChar[i];
+            for (int j=0; j <letras.length; j++) {
+                if (letras[j] == letra) {
+                    //JOptionPane.showMessageDialog(null,"Letra : "+letras[i]+"\n"+"Camino : "+camino[i] );
+                    mensajito+=camino[i]+" ";
+                    encontrado = true;
+                    break;
+                }else{
+                    encontrado=false;
+                }
             }
-
         }
+       
+        
+        
         if (encontrado) {
             
-            //JOptionPane.showMessageDialog(null,"Encontrado \n "+i);
+            JOptionPane.showMessageDialog(null,"La codificacion de la palabra es: \n"+mensajito);
 
         } else {
             JOptionPane.showMessageDialog(null,"Letra "+mensaje+" No encontrado");

@@ -19,9 +19,9 @@ public class Huffman {
     public static void main(String[] args) {
         // TODO code application logic here
         Ventana main=new Ventana();
-       // main.show();
+        main.show();
         
-        
+        /*
         Codificador demo = new Codificador();
         int ciclo = 1;
         while (ciclo != 2) {
@@ -53,7 +53,7 @@ public class Huffman {
           }catch(Exception e){
               JOptionPane.showMessageDialog(null,"Introduce algo correcto");
           }
-        }
+        }*/
 
     }
 }
