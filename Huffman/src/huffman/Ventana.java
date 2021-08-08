@@ -131,7 +131,7 @@ public class Ventana extends javax.swing.JFrame {
     //para codificar
     private void codificadorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codificadorButtonActionPerformed
         try{
-            String mensaje = JOptionPane.showInputDialog(null, "Caracteres admitidos \nA\nE\nI\nO\nC\nR\nB\nP\nU");
+            String mensaje = JOptionPane.showInputDialog(null, "Caracteres admitidos \nA - \tE - \tI \nO - \tC - \tR \nB - \tP - \tU");
             demo.buscarCamino(mensaje);
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"No encontrado");

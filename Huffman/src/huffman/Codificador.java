@@ -177,7 +177,7 @@ public class Codificador {
             JOptionPane.showMessageDialog(null,"La codificacion de la palabra es: \n"+mensajito);
 
         } else {
-            JOptionPane.showMessageDialog(null,"Letra "+mensaje+" No encontrado");
+            JOptionPane.showMessageDialog(null,"Alguna letra es incorrecta, revisa porfavor las posibilidades");
         }
 
         /*for (int i = 0; i < letras.length; i++){
