@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class Codificador {
 
     char[] letras = {'C', 'I', 'O', 'E', 'P', 'R', 'B', 'U', 'A'};
-    int []valores={7,8,9,10,4,6,10,11,12};
+    int []valores={7,8,9,10,4,6,100,11,12};
     String[] camino = {"111", "110", "101", "100", "0111", "0110", "010", "001", "000"};
     LinkedList<String> prueba = new LinkedList();
     
@@ -31,7 +31,7 @@ public class Codificador {
     Nodo nodo9 = new Nodo(8);
     Nodo nodo10 = new Nodo(9);
     Nodo nodo11 = new Nodo(10);
-    Nodo nodo12 = new Nodo(10);
+    Nodo nodo12 = new Nodo(100);
     Nodo nodo13 = new Nodo(4);
     Nodo nodo14 = new Nodo(6);
     Nodo nodo15 = new Nodo(11);
