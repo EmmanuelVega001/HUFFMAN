@@ -161,7 +161,7 @@ public class Codificador {
             for (int j=0; j <letras.length; j++) {
                 if (letras[j] == letra) {
                     //JOptionPane.showMessageDialog(null,"Letra : "+letras[i]+"\n"+"Camino : "+camino[i] );
-                    mensajito+=camino[i]+" ";
+                    mensajito+=camino[j]+" ";
                     encontrado = true;
                     break;
                 }else{
