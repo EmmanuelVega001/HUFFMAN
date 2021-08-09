@@ -20,8 +20,6 @@ public class Huffman {
         // TODO code application logic here
         Ventana main=new Ventana();
         main.show();
-        
-       
-
+      
     }
 }
