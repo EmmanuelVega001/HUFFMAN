@@ -17,7 +17,6 @@ public class Codificador {
     char[] letras = {'C', 'I', 'O', 'E', 'P', 'R', 'B', 'U', 'A'};
     int []valores={7,8,9,10,4,6,100,11,12};
     String[] camino = {"111", "110", "101", "100", "0111", "0110", "010", "001", "000"};
-    LinkedList<String> prueba = new LinkedList();
     
     Nodo padre = new Nodo(0);
     Nodo nodo1 = new Nodo(0);
@@ -88,8 +87,8 @@ public class Codificador {
         int numerito = 0;//creo un numero que almacenera la palbra encontrada
         arrayNumero = valor.toCharArray();//relleno el array con un array de la palabra separada por los caracteres
 
-        boolean bandera = true;;//creo unas banderas que me ayudara
-        boolean verificar = true;
+        boolean bandera = true,verificar = true;//creo unas banderas que me ayudara
+        
         //creo 3 enteros, contador para la posicion del array, value para el valor del numero de la letra, y el numero auxiliar que me ayudara adelante
         int contador = 0;
         int value;
@@ -110,13 +109,11 @@ public class Codificador {
                     else if (value == 0) {//si es cero es para la derecha
                         copia = copia.getNodoDerecho();//avanzo a la derecha
                         numerito = copia.getDato();//obtengo el valor que hay en ese nodo
-                    } else {
-                        //numero incorrecto agragar JOption
-                    }
+                    } 
                     contador++;//aumento el contador en uno para que pueda avanzar en el array de los caracteres
                     if (numerito != 0 || copia == null) {//si el numero obtenido del nodo es diferente a cero significa que hay una letra
                         bandera = false;//rompo el ciclo y obtengo la posicion en la que se quedo
-                        System.out.println("numero encontrado en la vuelta: " + contador + " con el valor: " + numerito);//desbuggeado
+
                         numeroAuxiliar = contador;
                         int posicion=0;
                         for (int i=0;i<valores.length;i++){
@@ -180,14 +177,5 @@ public class Codificador {
             JOptionPane.showMessageDialog(null,"Alguna letra es incorrecta, revisa porfavor las posibilidades");
         }
 
-        /*for (int i = 0; i < letras.length; i++){
-            if (mensaje != letras[i]){
-                System.out.print(i+"\n");
-                
-            }
-
-        }¨*/
-
-        // System.out.print("Otra madre: \n"+prueba);
     }
 }
