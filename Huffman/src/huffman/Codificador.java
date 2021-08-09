@@ -190,7 +190,4 @@ public class Codificador {
 
         // System.out.print("Otra madre: \n"+prueba);
     }
-
-    
-
 }
