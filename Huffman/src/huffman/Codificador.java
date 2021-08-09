@@ -187,26 +187,10 @@ public class Codificador {
             }
 
         }¨*/
-        Nodo copia = padre;
-        inOrder(copia);
+
         // System.out.print("Otra madre: \n"+prueba);
     }
 
-    public void inOrder(Nodo raiz) {
-
-        if (raiz != null) {
-            // System.out.print("1");
-
-            inOrder(raiz.getNodoIzquierdo());
-            //     System.out.print(raiz.getDato()+" ");
-            if (raiz.getDato() != 0) {
-                prueba.add(raiz.getDato() + "");
-            }
-            //    System.out.print("0");
-            inOrder(raiz.getNodoDerecho());
-
-        }
-
-    }
+    
 
 }
